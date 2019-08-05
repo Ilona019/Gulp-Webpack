@@ -1,0 +1,12 @@
+include ../../components/header/header
+include ../../components/footer/footer
+
+doctype html
+html(lang='ru')
+    include parts/head
+    body
+        main.main
+            +header()
+            block content
+            +footer()
+            script(src='assets/scripts/app.main.js')

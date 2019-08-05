@@ -112,6 +112,6 @@ gulp.task("watch", () => {
      "production",
      gulp.series(
          "clear",
-         gulp.parallel("templates", "styles", "scripts", "images", "copy")
+         gulp.parallel("templates", "styles", "scripts", "images")
      )
  )
