@@ -2,10 +2,15 @@ include ../logo/logo
 include ../search/search
 include ../icon-btn/icon-btn
 
+
 mixin header()
     header.header
-        +logo('assets/images/logo.png')
-        +search()
-        header.header__btns
-            +icon-btn('assents/images/heart.png', 10)
-            +icon-btn('assents/images/basket.png', 2)
+    .container
+        .header__content
+            +logo('assets/images/logo.svg')
+            +search()
+            header.header__btns
+                +icon-btn('assets/images/favourites.svg', 10)(src='favourites')
+                +icon-btn('assets/images/cart.svg', 2)(src='cart')
+    nav.menu
+        include ../menu/menu
