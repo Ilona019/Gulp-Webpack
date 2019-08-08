@@ -1,0 +1,41 @@
+nav{
+    margin-top: 45px;
+}
+
+.menu *{
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul,
+.menu ol {
+    list-style: none;
+}
+
+.menu > ul {
+    display: flex;
+    justify-content: center;
+}
+
+.menu > ul li a {
+    display: block;
+    background: #fff;
+    padding: 15px 30px 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    background: #fff;
+    color: color('blue');
+    box-shadow: 1px 5px  10px -5px black;
+    transition: all 0.3s ease;
+}
+
+.menu li:hover > ul{
+    display: block;
+}

@@ -1,0 +1,9 @@
+- var pages = [{title: "Мебель", url: "#", child: [{title: "Мягкая мебель", url: "#"}, {title: "Столы", url: "#"}, {title: "Стулья", url: "#"}, {title: "Стеллажи", url: "#"}, {title: "Шкафы-купе", url: "#"}]}, {title: "Хранение", url: "#", child: []}, {title: "Спальня", url:"#", child: []},{title: "Кухня", url: "#", child: []}, {title: "Аксессуары", url: "#", child: []}, {title: "Акции", url: "#", child: []}]
+ ul
+    each page in pages
+        li: a(href= page.url)= page.title
+        if page.child.length > 0
+            ul
+                each subPage in page.child
+                    li: a(href= subPage.url)= subPage.title
+
