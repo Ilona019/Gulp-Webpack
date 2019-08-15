@@ -1,12 +1,14 @@
 include ../../components/header/header
 include ../../components/footer/footer
+include ../../common/templates/mixins/mixins
 
 doctype html
 html(lang='ru')
     include parts/head
     body
+        //-include ../icons/sprite.svg
+        +header()
         main.main
-            +header()
             block content
             +footer()
             script(src='assets/scripts/app.main.js')
