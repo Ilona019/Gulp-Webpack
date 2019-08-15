@@ -1,0 +1,5 @@
+<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+    <circle fill-rule="nonzero" cx="19" cy="20" r="2"/>
+    <circle fill-rule="nonzero" cx="9" cy="20" r="2"/>
+    <path d="M21.05 7l-15-.83L5 2.68A1 1 0 0 0 4 2H1a1 1 0 1 0 0 2h2.28l.93 2.78 2.5 9.5a1 1 0 0 0 1.06.62l13.36-2.78a1 1 0 0 0 .87-1V8a1 1 0 0 0-.95-1z" fill-rule="nonzero"/>
+</svg>
