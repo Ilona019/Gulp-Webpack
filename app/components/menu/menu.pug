@@ -1,9 +1,12 @@
-- var pages = [{title: "Мебель", url: "#", child: [{title: "Мягкая мебель", url: "#"}, {title: "Столы", url: "#"}, {title: "Стулья", url: "#"}, {title: "Стеллажи", url: "#"}, {title: "Шкафы-купе", url: "#"}]}, {title: "Хранение", url: "#", child: []}, {title: "Спальня", url:"#", child: []},{title: "Кухня", url: "#", child: []}, {title: "Аксессуары", url: "#", child: []}, {title: "Акции", url: "#", child: []}]
- ul
-    each page in pages
-        li: a(href= page.url)= page.title
-        if page.child.length > 0
-            ul
-                each subPage in page.child
-                    li: a(href= subPage.url)= subPage.title
-
+mixin menu(arr)
+    nav.menu
+        ul.menu__list
+            if arr
+                each item in arr
+                    li.menu__item
+                        a.menu__link.link(href=item.url)= item.title
+                        if item.submenu
+                            ul.menu__sub-list
+                                each subItem in item.submenu
+                                    li.menu__sub-item
+                                        a.menu__sub-link.link(href=subItem.url)= subItem.title
