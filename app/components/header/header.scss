@@ -1,23 +1,25 @@
 .header {
-    padding: 50px 0;
-    padding-bottom: 50px;
+    &__top,
+    &__bottom {
+        border-bottom: 1px solid color('gray-light');
+    }
+
+    &__top {
+        padding: 50px 0;
+    }
+
+    &__bottom {
+        padding: 20px 0 5px;
+    }
 
     &__content {
-        display:flex;
+        display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
     &__btns {
-        display:flex;
-
-        .icon-btn {
-            margin-right:  40px;
-        
-
-            &:last-child {
-                margin-right: 0;
-            }
-       }
+        display: flex;
+        justify-content: space-between;
     }
 }

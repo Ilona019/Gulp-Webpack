@@ -1,0 +1,30 @@
+.btn {//базовые стили, осьальноте в модификаторах.
+    display: inline-block;
+    height: 50px;//высота кнопок по макету
+    padding: 0 85px;
+    margin: 0;//убрать по умолчанию.
+    border: 0;
+    line-height: 50px;
+    background-color: transparent;//убрать background
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: $font-family-base;//не насдуется от body.
+    cursor: pointer;//появл указатель.
+    text-align: center;
+    transition: background-color $animation-time;
+    
+    &_primary {
+        color: color("white");
+        background-color: color("blue");
+
+        &:hover {
+            background-color: color("blue-dark");//измение при наведении.
+        }
+    }
+
+    &_block {
+        width: 100%;
+    }
+}
