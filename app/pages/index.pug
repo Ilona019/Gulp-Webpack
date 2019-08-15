@@ -1,5 +1,78 @@
 //- Используем стандартный шаблон
 extends ../layouts/default/default
 
+include ../components/breadcrumbs/breadcrumbs
+include ../components/page-title/page-title
+include ../components/card-list/card-list
+include ../components/input-checkbox/input-checkbox
+
 //- Выводим контент
-    | Index content
+block content
+    .container
+        .mt-xl-12.mb-xl-3
+            -
+                var breadcrumbs = [
+                    {url: '#', title: 'Главная', value: 'Главная'},
+                    {url: '#', title: 'Каталог', value: 'Каталог'},
+                    {url: '#', title: 'Мягкая мебель', value: 'Мягкая мебель'},
+                    {value: 'Диваны'}
+                ]
+            +breadcrumbs(breadcrumbs)
+        +page-title('Диваны')
+        .mt-xl-12
+            .row
+                .col-xl-5.pt-xl-4
+                    +input-checkbox('test', 'Вельвет')
+                    br
+                    button.btn.btn_primary Button
+                    br
+                    input.btn.btn_primary(type='submit' value='Button')
+                    br
+                    a.btn.btn_primary(href="#") Button
+                .col-xl-18.offset-xl-1
+                    -
+                        var cards = [
+                            {
+                                href: '#',
+                                name: 'Montreal',
+                                imgUrl: 'assets/images/item-01.jpg',
+                                price: '10&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Glasgow',
+                                imgUrl: 'assets/images/item-02.jpg',
+                                price: '19&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Munich',
+                                imgUrl: 'assets/images/item-03.jpg',
+                                price: '24&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Alexandria',
+                                imgUrl: 'assets/images/item-04.jpg',
+                                price: '109&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Karachi',
+                                imgUrl: 'assets/images/item-05.jpg',
+                                price: '17&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            },
+                            {
+                                href: '#',
+                                name: 'Phoenix',
+                                imgUrl: 'assets/images/item-06.jpg',
+                                price: '29&nbsp;990',
+                                btns: ['favourites', 'cart']
+                            }
+                        ]
+                    +card-list(cards)
