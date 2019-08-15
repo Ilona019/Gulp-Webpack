@@ -26,6 +26,10 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const minifyCss = require('gulp-clean-css');
 
+//svg-sprite
+const svgSprite = require("gulp-svg-sprite");
+const svgmin = require("gulp-svgmin");
+
 const PATHS = {
     app:"./app",
     dist:"./dist"
@@ -56,7 +60,7 @@ gulp.task('scripts', () => {
 
 gulp.task("styles", () => {
     return gulp
-    .src(`${PATHS.app}/common/styles/**/*.scss`, {
+    .src(`${PATHS.app}/common/styles/app.scss`, {
     since: gulp.lastRun("styles")
     })
     .pipe(plumber())
@@ -71,7 +75,7 @@ gulp.task("styles", () => {
 gulp.task("images", () => {
     return gulp
     .src(`${PATHS.app}/common/images/**/*.+(png|jpg|jpeg|gif|svg|ico)`, {
-    since: gulp.lastRun("images")
+   // since: gulp.lastRun("images")
     })
     .pipe(plumber())
     .pipe(gulpIf(isProduction, imagemin()))
@@ -100,10 +104,47 @@ gulp.task("watch", () => {
     .pipe(gulp.dest('dist/assets/fonts/'))
 });
 
+gulp.task("icons", () => {
+  return gulp
+    .src(`${PATHS.app}/common/icons/**/*.svg`)
+    .pipe(plumber())
+    .pipe(svgmin({
+      js2svg: {
+        pretty: true
+      }
+    }))
+    .pipe(
+      svgSprite({
+        mode: {
+          symbol: {//формир-ся спрайт в виде иконки стиля
+            sprite: "../dist/assets/images/icons/sprite.svg",//итоговый спрайт
+            render: {
+              scss: {
+                dest:'../app/common/styles/helpers/sprites.scss',
+                template: './app/common/styles/helpers/sprite-template.scss'//сформир стиль по шаблону в helpers/sprite-template.scss
+              }
+            }
+          }
+        }
+      })
+    )
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task("watch", () => {
+	gulp.watch(`${PATHS.app}/**/*.pug`, gulp.series("templates"));
+	gulp.watch(`${PATHS.app}/**/*.scss`, gulp.series("styles"));
+	gulp.watch(`${PATHS.app}/**/*.js`, gulp.series("scripts"));
+	gulp.watch(
+		`${PATHS.app}/common/images/**/*.+(png|jpg|jpeg|gif|svg|ico)`,
+		gulp.series("images")
+	);
+});
+
  gulp.task(
      "default",
-     gulp.series(
-         gulp.parallel("templates", "styles", "scripts", "images", "copy"),
+     gulp.series(      
+         gulp.parallel("templates", "icons", "styles", "scripts", "images", "copy"),
          gulp.parallel("watch", "server")
      )
  )
@@ -112,6 +153,6 @@ gulp.task("watch", () => {
      "production",
      gulp.series(
          "clear",
-         gulp.parallel("templates", "styles", "scripts", "images")
+         gulp.parallel("templates", "icons", "styles", "scripts", "images")
      )
  )
