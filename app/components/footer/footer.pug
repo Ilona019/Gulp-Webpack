@@ -1,2 +1,9 @@
-mixin footer()
-    footer.footer Footer content
+mixin footer(arr)
+    .container_footer
+        footer.footer
+            ul.footer__list
+                if arr
+                    each item in arr
+                        li.footer__item
+                            a.footer__link.link(href=item.url)= item.title
+        .label © 2019, Интернет-магазин мебели

@@ -1,0 +1,39 @@
+.container_footer {
+    background-color: color("gray-lighter");
+}
+
+.footer {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+    margin-left: 70px;
+    height: 152px;
+
+	&__list {
+        display: flex;
+	}
+
+	&__item {
+		background-color: #fff;
+		position: relative;
+		padding: 4px 15px;
+		margin-right: 4px;
+
+		&:hover {
+			> .menu__link {
+				color: color("blue");
+			}
+		}
+	}
+
+	&__link {
+		font-weight: normal;
+	}
+}
+
+.label {
+	margin-left: 70px;
+	padding-bottom: 40px;
+	font-size: 12px;
+	color: color("gray");
+}
