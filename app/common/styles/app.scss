@@ -1,21 +1,38 @@
 // Libraries
-//@import "../../../node_modules/**/*.css";
+// @import "../../../node_modules/**/*.css";
 
-//Variables
-@import 'variables/colors';
-@import 'variables/measures';
-@import 'variables/typography';
+// Variables
+@import "variables/colors";
+@import "variables/measures";
+@import "variables/typography";
+@import "variables/grid";
+@import "variables/animation";
 
-//  // Core style
-@import 'core/fonts';
-@import 'core/base';
-@import 'core/typography';
+//helpers
+@import "helpers/sprites";
+@import "helpers/bootstrap";
 
-//Pages
+// Core styles
+@import "core/fonts";
+@import "core/base";
+@import "core/typography";
 
-//Components
-@import '../../components/header/header';
-@import '../../components/footer/footer';
-@import '../../components/logo/logo';
-@import '../../components/search/search';
-@import '../../components/icon-btn/icon-btn';
+// Pages
+
+// Components
+@import "../../components/link/link";
+@import "../../components/header/header";
+@import "../../components/footer/footer";
+@import "../../components/logo/logo";
+@import "../../components/search/search";
+@import "../../components/icon-btn/icon-btn";
+@import "../../components/input-text/input-text";
+@import "../../components/menu/menu";
+@import "../../components/breadcrumbs/breadcrumbs";
+@import "../../components/page-title/page-title";
+@import "../../components/card-list/card-list";
+@import "../../components/card-item/card-item";
+@import "../../components/input-checkbox/input-checkbox";
+@import "../../components/btn/btn";
+@import "../../components/label-for-filters/label-for-filters";
+@import "../../components/input-checkbox-color/input-checkbox-color";
