@@ -5,6 +5,8 @@ include ../components/breadcrumbs/breadcrumbs
 include ../components/page-title/page-title
 include ../components/card-list/card-list
 include ../components/input-checkbox/input-checkbox
+include ../components/label-for-filters/label-for-filters
+include ../components/input-checkbox-color/input-checkbox-color
 
 //- Выводим контент
 block content
@@ -22,11 +24,40 @@ block content
         .mt-xl-12
             .row
                 .col-xl-5.pt-xl-4
-                    +input-checkbox('test', 'Вельвет')
+                    +label-for-filters("Цвет")
+                    .filter-color
+                        +input-checkbox-color('color',  '#fff')
+                        +input-checkbox-color('color',  '#000')
+                        +input-checkbox-color('color',  '#5a5a5a')
+                        +input-checkbox-color('color',  '#704d35')
+                        +input-checkbox-color('color',  '#e0791d')
+                        br
+                        +input-checkbox-color('color',  '#ba0606')
+                        +input-checkbox-color('color',  '#38a01a')
+                        +input-checkbox-color('color',  '#314976')
+                        +input-checkbox-color('color',  '#3748a6')
+                    +label-for-filters('Материал')
+                    +input-checkbox('materials', 'Вельвет')
                     br
+                    +input-checkbox('materials', 'Мирковелюр')
+                    br
+                    +input-checkbox('materials', 'Велюр')
+                    br
+                    +input-checkbox('materials', 'Жаккард')
+                    br
+                    +input-checkbox('materials', 'Замша')
+                    br
+                    +input-checkbox('materials', 'Рогожка')
+                    br
+                    +label-for-filters('Угол')
+                    +input-checkbox('angle','Левый')
+                    br
+                    +input-checkbox('angle','Правый')
+                    br
+                    +input-checkbox('angle','Универсальный')
                     button.btn.btn_primary Button
                     br
-                    input.btn.btn_primary(type='submit' value='Button')
+                    input.btn.btn_primary(type='submit' value='Применить')
                     br
                     a.btn.btn_primary(href="#") Button
                 .col-xl-18.offset-xl-1
