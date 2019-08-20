@@ -10,5 +10,6 @@ html(lang='ru')
         +header()
         main.main
             block content
-            +footer()
+            -   var footer = [{title: 'Каталог', url: '#'},{title: 'Оплата',url: '#'},{title: 'Доставка',url: '#'},{title: 'Возврат',url: '#'},{title: 'Сборка',url: '#'},{title: 'Помощь',url: '#'},{title: 'Обратная связь',url: '#'}]
+        +footer(footer)
             script(src='assets/scripts/app.main.js')
