@@ -1,0 +1,64 @@
+.color-checkbox {
+        height: 36px;
+        width: 36px;
+        border: 1px solid color('gray');
+        display: inline-flex;
+        position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    &:hover {
+            .color-checkbox {
+                    &__icon {
+                        opacity: .5;
+                        visibility: visuble;
+                    }
+            }
+    }
+
+    &[style*="#ffffff"] {//Если белый цвет выбран, галочку покрасить в голубой.
+        border: 1px solid color("gray");
+
+        .icon {
+                fill: color("blue");
+        }
+    }
+
+        &__input {
+            position: absolute !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0 ) !important;
+            height: 1px !important;
+            width: 1px !important;
+            margin: -1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+            opacity: 0 !important;
+        }
+
+        &__icon {
+            display: inline-flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity $animation-time, visibility $animation-time;
+
+            .icon {
+                    fill: color("white");
+            }
+        }
+
+        &__input {
+                &:checked {
+                    + .color-checkbox {
+                        &__icon {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+        }
+}
