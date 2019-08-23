@@ -5,7 +5,7 @@ mixin filter(params)
     .filter(class=attributes.class ? 'filter_' + attributes.class : '')
         .filter__title= params.title
             .filter__title-icon
-                +icon-btn('arrow')
+                +icon('arrow')
         .filter__items
             if attributes.class === 'color'
                 each item, index in params.items
