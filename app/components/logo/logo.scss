@@ -4,7 +4,7 @@
     &__img {
         max-width: 100%;
 
-        @include media-breakpoint(md){
+        @include media-breakpoint-down(md){
             width: 149px;
         }
     }
