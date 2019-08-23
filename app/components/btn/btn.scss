@@ -1,4 +1,4 @@
-.btn {//базовые стили, осьальноте в модификаторах.
+.btn {//базовые стили, остальноте в модификаторах.
     display: inline-block;
     height: 50px;//высота кнопок по макету
     padding: 0 85px;
@@ -26,5 +26,13 @@
 
     &_block {
         width: 100%;
+    }
+
+    &_clear {
+        height: auto;
+        padding: 0;
+        line-height: 24px;
+        color: color("gray-darkest");
+        font-weight: normal;
     }
 }
