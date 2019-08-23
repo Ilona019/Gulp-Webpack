@@ -55,6 +55,7 @@
 		background-color: color("white");
 		transform: translateX(-50%);
 		animation: fadeIn $animation-time;
+		z-index: 1;
 	}
 
 	&__sub-item {
