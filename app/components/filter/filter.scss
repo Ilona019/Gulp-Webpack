@@ -51,5 +51,13 @@
         &:last-child {
             margin-bottom: 0;
         }
-    }    
+    }
+
+    .filter__title.is-active + .filter__items {
+        display: block;
+    }
+    
+    .filter__items {
+        display: none;
+    }
 }
