@@ -8,3 +8,21 @@ $animation-time: 0.3s;
         opacity: 1;
 	}
 }
+
+@keyframes heart {
+	0% {
+		transform: scale(1);
+	}
+	40% {
+		transform: scale(1.2);
+	}
+	60% {
+		transform: scale(1,1);
+	}
+	80% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
